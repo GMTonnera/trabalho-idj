@@ -1,8 +1,10 @@
 #pragma once
 #include <SDL.h>
 #include <string>
+#include "Component.h"
+#include "GameObject.h"
 
-class Sprite {
+class Sprite : public Component{
 	private:
 		SDL_Texture* texture;
 		int width;
@@ -12,7 +14,9 @@ class Sprite {
 	public:
 		Sprite();
 
-		Sprite(std::string file);
+		Sprite(GameObject& go);
+
+		Sprite(std::string file, GameObject& go);
 
 		~Sprite();
 
@@ -20,12 +24,15 @@ class Sprite {
 
 		void SetClip(int x, int y, int w, int h);
 
-		void Render(int x, int y);
+		void Render();
 
 		int GetWidth();
 
 		int GetHeight();
 
 		bool IsOpen();
+		
+		void Update(float dt);
 
+		bool Is(std::string type);
 };

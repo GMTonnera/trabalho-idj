@@ -1,6 +1,8 @@
 #include <string>
 #include <SDL_mixer.h>
 #include <SDL_image.h>
+#include <ctime>
+#include <iostream>
 #include "Game.h"
 #include "State.h"
 
@@ -21,6 +23,8 @@ Game& Game::GetInstance() {
 
 Game::Game(std::string title, int width, int height) {
 	// Verificar se já existe uma instância de Game
+	srand(time(NULL));
+
 	if (instance == nullptr) {
 		// Se não, criar uma
 		instance = this;
@@ -32,7 +36,7 @@ Game::Game(std::string title, int width, int height) {
 		IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF);
 
 		// Inicializar o SDL_Mixer
-		Mix_Init(MIX_INIT_OGG);
+		Mix_Init(MIX_INIT_OGG | MIX_INIT_WAVPACK);
 		Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 1024);
 		Mix_AllocateChannels(32);
 		
