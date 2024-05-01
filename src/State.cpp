@@ -5,7 +5,7 @@
 #include <SDL.h>
 #include <iostream>
 
-State::State() : music(Music("recursos/audio/stageState.ogg")) {
+State::State() : music(Music("recursos/audio/stageState.ogg")){
 	this->quitRequested = false;
 	
 	GameObject* go = new GameObject();
@@ -15,6 +15,20 @@ State::State() : music(Music("recursos/audio/stageState.ogg")) {
 	go->AddComponent(spt);
 
 	objectArray.emplace_back(go);
+
+	GameObject* go2 = new GameObject();
+	go2->box.x = 0;
+	go2->box.y = 0;
+
+	TileSet ts = TileSet(64, 64, "recursos/img/tileset.png");
+	TileMap* tm = new TileMap(*go, "recursos/map/tileMap.txt", &ts);
+
+	go2->AddComponent(tm);
+
+
+
+
+
 
 	this->music.Play();
 

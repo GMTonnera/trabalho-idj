@@ -4,6 +4,8 @@
 #include "Sprite.h"
 #include "Music.h"
 #include "GameObject.h"
+#include "TileMap.h"
+
 
 class State {
 	private:

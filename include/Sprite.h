@@ -26,6 +26,8 @@ class Sprite : public Component{
 
 		void Render();
 
+		void Render(int x, int y);
+
 		int GetWidth();
 
 		int GetHeight();

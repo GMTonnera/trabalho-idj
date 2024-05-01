@@ -12,6 +12,9 @@
     <ClCompile Include="src\Component.cpp" />
     <ClCompile Include="src\Rect.cpp" />
     <ClCompile Include="src\Vec2.cpp" />
+    <ClCompile Include="src\TileSet.cpp" />
+    <ClCompile Include="src\TileMap.cpp" />
+    <ClCompile Include="src\Resources.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Game.h" />
@@ -24,5 +27,8 @@
     <ClInclude Include="include\GameObject.h" />
     <ClInclude Include="include\Sound.h" />
     <ClInclude Include="include\Face.h" />
+    <ClInclude Include="include\TileSet.h" />
+    <ClInclude Include="include\TileMap.h" />
+    <ClInclude Include="include\Resources.h" />
   </ItemGroup>
 </Project>
